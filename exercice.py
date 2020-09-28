@@ -5,8 +5,18 @@
 def order(values: list = None) -> bool:
     if values is None:
         # TODO: Demander les valeurs ici
+        list = []
+        while len(list)<10:
+            list.append(int(input("Entrez un nombre entier:")))
+        resultat = True
+        index = 0
+        while index<len(list)-1:
+            if list[index] > list[index+1]:
+                print("nope")
+                break
+            index+=1
+        print(resultat)
         pass
-
     return False
 
 
@@ -14,8 +24,20 @@ def anagrams(words: list = None) -> bool:
     if words is None:
         # TODO: Demander les mots ici
         pass
-
+    mot1="Alevin"
+    mot2="Nivela"
+    mot1=list(mot1)
+    mot2=list(mot2)
+    if len(mot1) == len(mot2):
+        for lettre in mot1:
+            if lettre in mot2 :
+                mot2.remove(lettre)
+        if len(mot2)==0:
+            print("annagrame")
+        else:
+            print("nope")
     return False
+
 
 
 def contains_doubles(items: list) -> bool:
